@@ -6,9 +6,10 @@
 body {
   margin: 0;
   background: #0e0e11;
-  color: #ffffff;
+  color: #fff;
 }
 
+/* Header */
 header {
   padding: 24px;
   text-align: center;
@@ -25,6 +26,7 @@ h1 {
   margin-top: 4px;
 }
 
+/* Prompt */
 .prompt {
   text-align: center;
   margin: 40px 20px;
@@ -45,6 +47,7 @@ button.secondary {
   color: #aaa;
 }
 
+/* Feed */
 .feed {
   max-width: 600px;
   margin: auto;
@@ -69,6 +72,23 @@ button.secondary {
   color: #aaa;
 }
 
+/* Actions */
+.actions-row {
+  display: flex;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.actions-row a {
+  font-size: 14px;
+  border: 1px solid #1db954;
+  padding: 6px 14px;
+  border-radius: 20px;
+  color: #1db954;
+  text-decoration: none;
+}
+
+/* Modal */
 .modal {
   position: fixed;
   inset: 0;
