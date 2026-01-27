@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MARGO — Speak Through Music</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header>
+    <h1>MARGO</h1>
+    <p class="tagline">Speak through music.</p>
+  </header>
+
+  <main>
+    <section class="prompt">
+      <h2>How do you feel right now?</h2>
+      <button id="openComposer">Write a line</button>
+    </section>
+
+    <section id="feed" class="feed"></section>
+  </main>
+
+  <!-- Composer Modal -->
+  <div id="composer" class="modal hidden">
+    <div class="modal-content">
+      <textarea id="textInput" maxlength="140" placeholder="Write a line in your own words…"></textarea>
+      <div class="counter"><span id="count">0</span>/140</div>
+
+      <select id="emotion">
+        <option value="">Select emotion (optional)</option>
+        <option>Heartbreak</option>
+        <option>Love</option>
+        <option>Hope</option>
+        <option>Nostalgia</option>
+        <option>Regret</option>
+        <option>Healing</option>
+        <option>Rage</option>
+      </select>
+
+      <input id="song" type="text" placeholder="Tag a song (Song — Artist)" />
+
+      <div class="actions">
+        <button id="postBtn">Post</button>
+        <button id="closeComposer" class="secondary">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
