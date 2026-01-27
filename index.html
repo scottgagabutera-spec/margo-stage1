@@ -9,7 +9,7 @@
   <!-- Styles -->
   <link rel="stylesheet" href="style.css" />
 
-  <!-- Plausible Analytics -->
+  <!-- Plausible Analytics (FREE) -->
   <script
     async
     defer
@@ -19,6 +19,7 @@
 </head>
 
 <body>
+
   <header>
     <h1>MARGO</h1>
     <p class="tagline">Speak through music.</p>
@@ -32,6 +33,41 @@
 
     <section id="feed" class="feed"></section>
   </main>
+
+  <!-- Composer Modal -->
+  <div id="composer" class="modal hidden">
+    <div class="modal-content">
+      <textarea
+        id="textInput"
+        maxlength="140"
+        placeholder="Write a line in your own words…"></textarea>
+
+      <div class="counter">
+        <span id="count">0</span>/140
+      </div>
+
+      <select id="emotion">
+        <option value="">Select emotion (optional)</option>
+        <option>Heartbreak</option>
+        <option>Love</option>
+        <option>Hope</option>
+        <option>Nostalgia</option>
+        <option>Regret</option>
+        <option>Healing</option>
+        <option>Rage</option>
+      </select>
+
+      <input
+        id="song"
+        type="text"
+        placeholder="Tag a song (Song — Artist)" />
+
+      <div class="actions">
+        <button id="postBtn">Post</button>
+        <button id="closeComposer" class="secondary">Cancel</button>
+      </div>
+    </div>
+  </div>
 
   <script src="script.js"></script>
 </body>
