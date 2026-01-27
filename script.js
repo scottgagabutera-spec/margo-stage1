@@ -9,7 +9,7 @@ const emotionSelect = document.getElementById("emotion");
 const songInput = document.getElementById("song");
 const count = document.getElementById("count");
 
-// Open / Close modal
+// Open / Close composer
 openComposer.onclick = () => composer.classList.remove("hidden");
 closeComposer.onclick = () => composer.classList.add("hidden");
 
@@ -31,23 +31,31 @@ postBtn.onclick = () => {
 
   post.innerHTML = `
     <p>${text}</p>
-
     <div class="meta">
       ${emotion ? `#${emotion}` : ""}
       ${song ? ` · 🎵 ${song}` : ""}
     </div>
-
     <div class="actions-row">
-      <a href="#" class="share">Share</a>
+      <a href="#" class="share-x">X</a>
+      <a href="#" class="share-copy">Copy</a>
     </div>
   `;
 
-  // Share logic
-  post.querySelector(".share").onclick = (e) => {
+  // Share to X
+  post.querySelector(".share-x").onclick = (e) => {
     e.preventDefault();
-    const shareText = `"${text}" — via MARGO`;
-    navigator.clipboard.writeText(shareText);
-    alert("Copied to clipboard ✨");
+    const tweet = encodeURIComponent(`"${text}" — via MARGO`);
+    window.open(
+      `https://twitter.com/intent/tweet?text=${tweet}`,
+      "_blank"
+    );
+  };
+
+  // Copy to clipboard
+  post.querySelector(".share-copy").onclick = (e) => {
+    e.preventDefault();
+    navigator.clipboard.writeText(`"${text}" — via MARGO`);
+    alert("Copied ✨");
   };
 
   feed.prepend(post);
