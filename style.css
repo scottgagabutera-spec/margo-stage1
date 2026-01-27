@@ -6,7 +6,7 @@
 body {
   margin: 0;
   background: #0e0e11;
-  color: #fff;
+  color: #ffffff;
 }
 
 header {
@@ -67,17 +67,6 @@ button.secondary {
   margin-top: 12px;
   font-size: 14px;
   color: #aaa;
-}
-
-.actions-row {
-  display: flex;
-  gap: 16px;
-  margin-top: 16px;
-}
-
-.actions-row a {
-  color: #1db954;
-  text-decoration: none;
 }
 
 .modal {
