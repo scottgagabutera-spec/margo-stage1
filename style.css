@@ -67,7 +67,7 @@ button.secondary {
 }
 
 .meta {
-  margin-top: 12px;
+  margin-top: 10px;
   font-size: 14px;
   color: #aaa;
 }
@@ -75,12 +75,13 @@ button.secondary {
 /* Actions */
 .actions-row {
   display: flex;
-  gap: 12px;
-  margin-top: 16px;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 14px;
 }
 
 .actions-row a {
-  font-size: 14px;
+  font-size: 13px;
   border: 1px solid #1db954;
   padding: 6px 14px;
   border-radius: 20px;
