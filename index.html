@@ -3,10 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
   <title>MARGO — Speak Through Music</title>
 
-  <!-- Styles -->
   <link rel="stylesheet" href="style.css" />
 
   <!-- Plausible Analytics -->
@@ -19,55 +17,56 @@
 </head>
 
 <body>
-
-  <header>
+  <main class="container">
     <h1>MARGO</h1>
-    <p class="tagline">Speak through music.</p>
-  </header>
+    <p class="tagline">Say what you feel. Tag a song. Share the moment.</p>
 
-  <main>
-    <section class="prompt">
-      <h2>How do you feel right now?</h2>
-      <button id="openComposer">Write a line</button>
+    <textarea
+      id="thought"
+      placeholder="What are you feeling right now?"
+    ></textarea>
+
+    <select id="emotion">
+      <option value="">Select emotion (optional)</option>
+      <option>Heartbreak</option>
+      <option>Love</option>
+      <option>Hope</option>
+      <option>Nostalgia</option>
+      <option>Regret</option>
+      <option>Healing</option>
+      <option>Rage</option>
+    </select>
+
+    <input
+      id="song"
+      type="text"
+      placeholder="Tag a song (Song — Artist)"
+    />
+
+    <button id="postBtn">Create & Share</button>
+
+    <section id="output" class="hidden">
+      <div class="card">
+        <p id="outputText"></p>
+        <p id="outputSong"></p>
+      </div>
+
+      <h3>Share</h3>
+      <div class="share-buttons">
+        <button data-share="x">X</button>
+        <button data-share="instagram">Instagram</button>
+        <button data-share="tiktok">TikTok</button>
+        <button data-share="copy">Copy Link</button>
+      </div>
+
+      <h3>Listen on</h3>
+      <div class="platforms">
+        <a id="spotify" target="_blank">Spotify</a>
+        <a id="apple" target="_blank">Apple Music</a>
+        <a id="youtube" target="_blank">YouTube Music</a>
+      </div>
     </section>
-
-    <section id="feed" class="feed"></section>
   </main>
-
-  <!-- Composer Modal -->
-  <div id="composer" class="modal hidden">
-    <div class="modal-content">
-      <textarea
-        id="textInput"
-        maxlength="140"
-        placeholder="Write a line in your own words…"></textarea>
-
-      <div class="counter">
-        <span id="count">0</span>/140
-      </div>
-
-      <select id="emotion">
-        <option value="">Select emotion (optional)</option>
-        <option>Heartbreak</option>
-        <option>Love</option>
-        <option>Hope</option>
-        <option>Nostalgia</option>
-        <option>Regret</option>
-        <option>Healing</option>
-        <option>Rage</option>
-      </select>
-
-      <input
-        id="song"
-        type="text"
-        placeholder="Tag a song (Song — Artist)" />
-
-      <div class="actions">
-        <button id="postBtn">Post</button>
-        <button id="closeComposer" class="secondary">Cancel</button>
-      </div>
-    </div>
-  </div>
 
   <script src="script.js"></script>
 </body>
